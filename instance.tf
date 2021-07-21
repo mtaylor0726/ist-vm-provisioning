@@ -58,6 +58,7 @@ resource "vsphere_virtual_machine" "vm_deploy" {
     adapter_type = data.vsphere_virtual_machine.template.network_interface_types[0]
   }
   wait_for_guest_ip_timeout=-1
+  wait_for_guest_net_timeout=-1
   disk {
     label            = "disk0"
     size             = data.vsphere_virtual_machine.template.disks.0.size
